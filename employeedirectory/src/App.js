@@ -1,31 +1,31 @@
 import React, { Component } from "react";
 import Title from "./components/Title";
 import Table from "./components/Table";
+import users from "./users.json";
+// import { render } from "react-dom";
+
+class App extends Component {
+  state = {
+    users
+  };
 
 
-const users = [
-  {
-    "id": 1,
-    "image": "",
-    "first": "Carl",
-    "last": "Carlson",
-    "email": "cc@email.com",
-    "dob": "1999-12-12"
-  },
-  {
-    "id": 2,
-    "image": "",
-    "first": "Lenny",
-    "last": "Lawrenson",
-    "email": "LL@email.com",
-    "dob": "1999-11-11"
-  },
-]
-
-function App() {
+render() {
   return (
+    <div>
     <Title>Employee Directory</Title>
+    {this.state.users.map(user => (
+    <Table 
+      first={user.first}
+      last={user.last}
+      phone={user.phone}
+      email={user.email}
+      dob={user.dob}
+    />
+    ))}
+    </div>
   );
+}
 }
 
 export default App;

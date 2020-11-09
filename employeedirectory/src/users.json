@@ -1,0 +1,16 @@
+[
+    {
+        "first": "Carl",
+        "last": "Carlson",
+        "phone": "1231231234",
+        "email": "carlcarlson@email.com",
+        "dob": "2000-11-11"
+    },
+    {
+        "first": "Danny",
+        "last": "Danielson",
+        "phone": "1231231233",
+        "email": "dannydimes@email.com",
+        "dob": "2000-12-12"
+    }
+]
