@@ -1,31 +1,21 @@
 import React, { Component } from "react";
 import Title from "./components/Title";
 import Table from "./components/Table";
+import Wrapper from "./components/Wrapper";
 import users from "./users.json";
 // import { render } from "react-dom";
 
-class App extends Component {
-  state = {
-    users
-  };
 
 
-render() {
+function App() {
   return (
     <div>
     <Title>Employee Directory</Title>
-    {this.state.users.map(user => (
-    <Table 
-      first={user.first}
-      last={user.last}
-      phone={user.phone}
-      email={user.email}
-      dob={user.dob}
-    />
-    ))}
+    <p> Add some text here! </p>
+    <Table />
     </div>
   );
 }
-}
+
 
 export default App;
