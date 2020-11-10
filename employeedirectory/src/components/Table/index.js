@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import users from "../../users.json";
-import API from "../../utils/API";
+// import API from "../../utils/API";
+// import UserData from "../UserData";
 import "./style.css";
 
 class Table extends Component {
