@@ -31,12 +31,13 @@ render(){
     return (
         <div>
             <p>Test</p>
+            {console.log(this.state.user)}
             <UserData
-            last={this.state.user.phone}
-            // first={this.state.user.name.first}
+            last={this.state.user.name ? this.state.user.name.last: ""}
+            first={this.state.user.name ? this.state.user.name.first: ""}
             phone={this.state.user.phone}
             email={this.state.user.email}
-            // dob={this.state.user.dob.date}
+            dob={this.state.user.dob ? this.state.user.dob.date: ""}
             />
         </div>
     )
