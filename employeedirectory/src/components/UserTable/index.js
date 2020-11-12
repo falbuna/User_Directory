@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import API from "../../utils/API"
 import UserData from "../UserData";
+import "./style.css";
+
 
 class UserTable extends Component {
     state = {
-        user: {},
+        users: []
     };
 
 componentDidMount(){
@@ -15,14 +17,8 @@ componentDidMount(){
 loadUsers = () => {
     API.getUsers()
         .then(res => {
-            this.setState({ user: res.data.results[0] })
-            console.log(res.data.results[0])
-            console.log(res.data.results[0].name.last)
-            console.log(res.data.results[0].name.first)
-            console.log(res.data.results[0].phone)
-            console.log(res.data.results[0].email)
-            console.log(res.data.results[0].dob.date)
-            console.log(res.data.results[0].picture.thumbnail)
+            this.setState({ users: res.data.results })
+            // console.log(res.data.results)
         })
         .catch(err => console.log(err));
 };
@@ -30,15 +26,26 @@ loadUsers = () => {
 render(){
     return (
         <div>
-            <p>Test</p>
-            {console.log(this.state.user)}
+        <table id="users">
+            <th>Picture</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>DOB</th>
+        <tbody>
+            {console.log(this.state.users)}
+            { this.state.users.map(user => (
             <UserData
-            last={this.state.user.name ? this.state.user.name.last: ""}
-            first={this.state.user.name ? this.state.user.name.first: ""}
-            phone={this.state.user.phone}
-            email={this.state.user.email}
-            dob={this.state.user.dob ? this.state.user.dob.date: ""}
+            image={user.picture.thumbnail}
+            last={user.name.last}
+            first={user.name.first}
+            phone={user.phone}
+            email={user.email}
+            dob={user.dob.date}
             />
+            ))}
+            </tbody>
+        </table>
         </div>
     )
 }

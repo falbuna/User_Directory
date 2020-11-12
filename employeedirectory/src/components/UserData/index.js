@@ -2,12 +2,13 @@ import React from "react";
 
 function UserData(props){
     return(
-    <div>
-    <p>Name: {props.last},{props.first}</p>
-    <p>Phone: {props.phone}</p>
-    <p>Email: {props.email}</p>
-    <p>DOB: {props.dob}</p>
-    </div>
+    <tr>
+        <td><img src={props.image}></img></td>
+        <td>{props.first} {props.last}</td>
+        <td>{props.phone}</td>
+        <td>{props.email}</td>
+        <td>{props.dob}</td>
+    </tr>
     )
 }
 

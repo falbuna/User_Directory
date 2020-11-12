@@ -6,7 +6,6 @@
 }
 
 #users td, #users th {
-    border: 1px solid #000000;
     padding: 8px;
 }
 
@@ -14,4 +13,5 @@
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
+    border: 1px solid #000000;
 }
