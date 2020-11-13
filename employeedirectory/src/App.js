@@ -1,4 +1,5 @@
 import React from "react";
+import SearchForm from "./components/SearchForm";
 import Title from "./components/Title";
 import UserTable from "./components/UserTable";
 // import Wrapper from "./components/Wrapper";
@@ -11,6 +12,7 @@ function App() {
   return (
     <div>
     <Title>Employee Directory</Title>
+    <SearchForm />
     <UserTable />
     </div>
   );

@@ -26,16 +26,20 @@ loadUsers = () => {
 render(){
     return (
         <div>
+        
         <table id="users">
+        <thead>
+            <tr>
             <th>Picture</th>
             <th>Name</th>
             <th>Phone</th>
             <th>Email</th>
             <th>DOB</th>
+            </tr>
+        </thead>
         <tbody>
-            {console.log(this.state.users)}
-            { this.state.users.map(user => (
-            <UserData
+            { this.state.users.map(( user, index) => (
+            <UserData key={index}
             image={user.picture.thumbnail}
             last={user.name.last}
             first={user.name.first}
