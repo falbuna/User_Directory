@@ -31,7 +31,6 @@ loadUsers = () => {
 
 handleInputChange = event => {
     this.setState({ value: event.target.value});
-    console.log(this.state.value)
     this.setState({ displayUserArray: this.checkName(event.target.value) })
 };
 
@@ -67,6 +66,7 @@ render(){
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
         />
+        <p>Sort the names by alphabetical order.</p>
         <table id="users">
         <thead>
             <tr>
