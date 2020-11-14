@@ -7,10 +7,10 @@ div.form-group {
     text-align: center;
 }
 
- form.search button[type="submit"]{
+ /* form.search button[type="submit"]{
     float: right;
-} 
-
- /* input#search.form-control {
-    width: 50%;
 }  */
+
+button.btn.btn-primary{
+    margin-top: 5px;
+}

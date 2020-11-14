@@ -8,7 +8,8 @@ import "./style.css";
 class UserTable extends Component {
     state = {
         users: [],
-        value: ""
+        value: "",
+        displayUserArray: []
     };
 
 componentDidMount(){
@@ -19,17 +20,19 @@ componentDidMount(){
 loadUsers = () => {
     API.getUsers()
         .then(res => {
-            this.setState({ users: res.data.results })
-            // console.log(res.data.results)
+            this.setState({ 
+                users: res.data.results,
+                displayUserArray: res.data.results
+            })
         })
         .catch(err => console.log(err));
 };
 
 
-
 handleInputChange = event => {
-    this.setState({ value: event.target.value });
+    this.setState({ value: event.target.value});
     console.log(this.state.value)
+    this.setState({ displayUserArray: this.checkName(event.target.value) })
 };
 
 handleFormSubmit = event => {
@@ -41,28 +44,26 @@ handleFormSubmit = event => {
 sortName = event => {
     switch (event.target.innerHTML) {
         case "Name":
-            this.state.users.sort(function (a, b) {
+            this.state.displayUserArray.sort(function (a, b) {
                 var textA = a.name.first;
                 var textB = b.name.first;
                 return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
             })
-            this.setState({ users: this.state.users })
+            this.setState({ displayUserArray: this.state.users })
             break;
-    
         default:
             break;
     }
 }
 
-checkName = () => {
-    return this.state.users.includes(this.state.value)
+checkName = (value) => {
+    return this.state.users.filter(user => user.name.first.includes(value))
 }
 
 render(){
     return (
         <div>
         <SearchForm
-            value={this.state.search}
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
         />
@@ -77,7 +78,8 @@ render(){
             </tr>
         </thead>
         <tbody>
-            { this.state.users.map(( user, index) => (
+            { 
+            this.state.displayUserArray.map(( user, index) => (
             <UserData key={index}
             image={user.picture.thumbnail}
             last={user.name.last}
