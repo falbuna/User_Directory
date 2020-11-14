@@ -10,6 +10,7 @@ function App() {
   return (
     <div>
     <Title>Employee Directory</Title>
+    <p>Enter a name in the search bar to filter by the first name of the user.</p>
     <UserTable />
     </div>
   );
