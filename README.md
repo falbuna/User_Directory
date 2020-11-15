@@ -15,8 +15,22 @@ This application allows the user to view an entire directory at once so that the
 
 ## Description
 
-The application uses React to render the directory and response to user events.
+The application uses React to render the directory and responses to the user events.
 
 ## Usage
 
+When the user first loads up the application, this is what they will see.
+
+![]()
+
+The user can search for an employee by typing in their name into the search bar. The directory will get filtered by what is being inputted into the search bar.
+
+![]()
+
+
+
 ## Questions
+
+If you have any questions regarding this application, please reach me at: falbuna1@gmail.com
+
+My Github can be found here: [https://github.com/falbuna/](https://github.com/falbuna/)
