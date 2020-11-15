@@ -21,13 +21,15 @@ The application uses React to render the directory and responses to the user eve
 
 When the user first loads up the application, this is what they will see.
 
-![]()
+![Employee Directory main page.](https://github.com/falbuna/User_Directory/blob/main/assets/01_employeedirectory.png)
 
 The user can search for an employee by typing in their name into the search bar. The directory will get filtered by what is being inputted into the search bar.
 
-![]()
+![Filtered names in search bar.](https://github.com/falbuna/User_Directory/blob/main/assets/02_filter.png)
 
+The user can click on "Name" in the table header to sort the names by alphabetical order. 
 
+!(Sorted names by first name.)[https://github.com/falbuna/User_Directory/blob/main/assets/03_sort.png]
 
 ## Questions
 
