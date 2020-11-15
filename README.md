@@ -29,7 +29,7 @@ The user can search for an employee by typing in their name into the search bar.
 
 The user can click on "Name" in the table header to sort the names by alphabetical order. 
 
-!(Sorted names by first name.)[https://github.com/falbuna/User_Directory/blob/main/assets/03_sort.png]
+![Sorted names by first name.](https://github.com/falbuna/User_Directory/blob/main/assets/03_sort.png)
 
 ## Questions
 
