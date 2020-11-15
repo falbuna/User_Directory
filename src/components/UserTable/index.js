@@ -16,7 +16,7 @@ componentDidMount(){
     this.loadUsers();
 }
 
-
+// This will get the axios call to get the users.
 loadUsers = () => {
     API.getUsers()
         .then(res => {
@@ -28,7 +28,7 @@ loadUsers = () => {
         .catch(err => console.log(err));
 };
 
-
+// This will handle when the user starts searching for users in the search bar.
 handleInputChange = event => {
     this.setState({ value: event.target.value});
     this.setState({ displayUserArray: this.checkName(event.target.value) })
@@ -36,10 +36,9 @@ handleInputChange = event => {
 
 handleFormSubmit = event => {
     event.preventDefault();
-    
     }
 
-
+// This will sort the name by first name when the user clicks on "Name" on the table header.
 sortName = event => {
     switch (event.target.innerHTML) {
         case "Name":
@@ -55,6 +54,7 @@ sortName = event => {
     }
 }
 
+// This will filter the names by what is being inputted into the search bar.
 checkName = (value) => {
     return this.state.users.filter(user => user.name.first.includes(value))
 }
@@ -66,7 +66,7 @@ render(){
             handleFormSubmit={this.handleFormSubmit}
             handleInputChange={this.handleInputChange}
         />
-        <p>Sort the names by alphabetical order.</p>
+        <p>Sort the names by alphabetical order by clicking on "Name" in the table header.</p>
         <table id="users">
         <thead>
             <tr>
